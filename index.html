@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BookLovers</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="materialize.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <script src="app.js" defer></script>
     <script
     src="https://code.jquery.com/jquery-3.5.1.js"
@@ -12,7 +14,46 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-    <input type="text" id="search"/>
-    <button id="searchButton">search</button>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+        </div>
+      </nav>
+
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">BookLovers</h1>
+            <div class="row center">
+              <h5 class="header col s12 light">Go On A Blind Date with a Book! <br>Take a chance and view a book we’ve selected. <br>We’re hoping we can introduce you to a book you’ll love, but may not have picked up on your own, otherwise.</h5>
+            </div>
+            <div class="row center">
+                <input type="text" id="search" placeholder="find your next book date by typing in a genres that you are interested in."/>
+                <button id="searchButton" class="waves-effect waves-light btn-large">search</button>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+
+          <!-- =========== CAROUSEL CONTAINER ======== -->
+          <div class="carousel-container">
+            <!-- previous button -->
+            <div class="carousel-button previous">
+              <!-- from linearicons icon font -->
+              <span class="lnr lnr-chevron-left"></span>
+            </div>
+            <!-- images -->
+            <div class="carousel-images">
+            <div class="carousel-item">1</div>
+            <div class="carousel-item">2</div>
+            </div>
+            <!-- next button -->
+            <div class="carousel-button next">
+              <!-- from linearicons icon font -->
+              <span class="lnr lnr-chevron-right"></span>
+            </div>
+          </div>
+        </div>  
+
 </body>
 </html>
