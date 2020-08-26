@@ -14,6 +14,13 @@ $(()=>{
         }).then(
             (data)=>{
                 console.log(data)
+                ///to do make div per book
+                //loop the data 
+                ///data.items.length to itterate the array
+                for(let i=0; i<data.items.length; i++){
+                    const $newBook = $('<div>')
+                    $('#results').append($newBook)
+                }
             },
             ()=>{
                 console.log('bad');
