@@ -15,11 +15,6 @@ body {
   width: 50%;
 }
 
-#results {
-  background-color: cornflowerblue;
-  width: 200px;
-  height: 250px;
-}
 /* ======= CAROUSEL SECTION ======== */
 .carousel-container {
   width: 70%;
@@ -27,21 +22,16 @@ body {
   justify-content: space-around;
 }
 .carousel-images {
-  width: 80%;
+  width: 350px;
+  height: 250px;
   background: #d7d7ce;
   padding: 10px;
   border-radius: 10px;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: row
 
 }
-.carousel-images img {
-  width: 100%;
-  border-radius: 10px;
-  display: none;
-}
-.carousel-images img:first-of-type {
-  display: block;
-}
+
 .carousel-button {
   align-self: center;
   background: #d7d7ce;
@@ -57,4 +47,16 @@ body {
   background: #009688;
   box-shadow: 1px 1px #d7d7ce;
   color: white;
+}
+
+.bookcover {
+  width: 30%;
+  height: 100%;
+  background-color: crimson;
+}
+
+.bookInfo {
+  width: 50%;
+  height: 100%;
+  background-color: green;
 }
