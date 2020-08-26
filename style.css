@@ -15,7 +15,11 @@ body {
   width: 50%;
 }
 
-
+#results {
+  background-color: cornflowerblue;
+  width: 200px;
+  height: 250px;
+}
 /* ======= CAROUSEL SECTION ======== */
 .carousel-container {
   width: 70%;
