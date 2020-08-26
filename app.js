@@ -18,8 +18,40 @@ $(()=>{
                 //loop the data 
                 ///data.items.length to itterate the array
                 for(let i=0; i<data.items.length; i++){
-                    const $newBook = $('<div>')
-                    $('#results').append($newBook)
+                    const item = data.items[i];
+                    const $slide=$(`<div/>`);
+                    $slide.addClass('slide');
+                    $('#results').append($slide);
+                    const $bookCover = $(`<div/>`);
+                    $bookCover.addClass('bookcover');
+                    const $bookImage = $(`<img/>`);
+                    $bookCover.append($bookImage);
+                    const imgUrl = item.volumeInfo.imageLinks.smallThumbnail;
+                    $bookImage.attr('src',imgUrl )
+
+                    $slide.append($bookCover);
+                    
+                    const $bookInfo=$(`<div/>`);
+                    $bookInfo.addClass('bookInfo');
+                    $slide.append($bookInfo);
+                    
+                    const $title =$('<p/>');
+                    $bookInfo.append($title);
+                    const bookTitle = item.volumeInfo.title;
+                    $title.text(bookTitle);
+
+                    const $authors = $('<p/>');
+                    $bookInfo.append($authors);
+                    let authors = ""
+                    for (const element of item.volumeInfo.authors){
+                        authors += element + ","
+                    }
+                    $authors.text(authors.replace(/,+$/,""));
+
+                    const $summary = $('<p/>');
+                    $bookInfo.append($summary);
+                    let summary = item.volumeInfo.description;
+                    $summary.text(summary);
                 }
             },
             ()=>{
