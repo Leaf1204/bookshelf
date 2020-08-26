@@ -22,8 +22,8 @@ body {
   justify-content: space-around;
 }
 .carousel-images {
-  width: 350px;
-  height: 250px;
+  width: 450px;
+  height: 400px;
   background: #d7d7ce;
   padding: 10px;
   border-radius: 10px;
@@ -50,18 +50,16 @@ body {
 }
 
 .bookcover {
-  width: 30%;
-  height: 100%;
-  background-color: crimson;
-  display: inline-block;
+ 
+  padding: 2rem;
+  flex: 1;
 }
 
 .bookInfo {
-  width: 50%;
-  height: 100%;
-  background-color: green;
-  display: inline-block;
+ 
+  padding: 2rem;
+  flex: 2;
 }
 .slide {
-  flex: 1;
+  display: flex;
 }
