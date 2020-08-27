@@ -13,7 +13,7 @@ $(()=>{
         
 
         $.ajax({
-            url:`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=AIzaSyApx2mrOvapaQUu15bI9SnyJyUlalMPJIs`
+            url:`https://www.googleapis.com/books/v1/volumes?q=subject:${searchTerm}&printType=books&maxResults=40&&orderBy=newest&key=AIzaSyApx2mrOvapaQUu15bI9SnyJyUlalMPJIs`
         }).then(
             (data)=>{
                 console.log(data)
@@ -43,14 +43,17 @@ $(()=>{
                     const bookTitle = item.volumeInfo.title;
                     $title.text(bookTitle);
 
-                    const $authors = $('<p/>');
-                    $bookInfo.append($authors);
-                    let authors = ""
-                    for (const element of item.volumeInfo.authors){
-                        authors += element + ","
-                    }
-                    $authors.text(authors.replace(/,+$/,""));
+                    if(item.volumeInfo.authors !== undefined){
 
+                        
+                        const $authors = $('<p/>');
+                        $bookInfo.append($authors);
+                        let authors = ""
+                        for (const element of item.volumeInfo.authors){
+                            authors += element + ","
+                        }
+                        $authors.text(authors.replace(/,+$/,""));
+                    }
                     const $summary = $('<p/>');
                     $bookInfo.append($summary);
                     let summary = item.volumeInfo.description;

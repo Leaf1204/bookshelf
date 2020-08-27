@@ -31,9 +31,6 @@ nav {
   justify-content: space-around;
 }
 .carousel-images {
-  width: 450px;
-  height: 400px;
-  background: #EDDCD4;;
   padding: 10px;
   border-radius: 10px;
   display: flex;
