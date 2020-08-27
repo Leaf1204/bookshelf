@@ -1,7 +1,7 @@
 body {
-    background: #f9f9f9;
+    background: #FFFFFF;
     margin: 0;
-    font-family: 'Archivo Black', Helvetica;
+    font-family: 'Libre Baskerville', serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,7 @@ body {
 nav {
   background-color: #A9B8C9;
   padding: 15px;
+  font-size: xx-large;
   text-align: center;
 }
   .container1 {
@@ -17,6 +18,44 @@ nav {
     align-items: center;
     width: 100%;
   }
+
+  .blurb {
+    text-align: center;
+    padding: 2em;
+  }
+
+  input[type=text] {
+    border: none;
+    border-bottom: 2px solid #A9B8C9;;
+  }
+
+  .button {
+    display: inline-block;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    text-align: center;
+    font-size: 16px;
+    padding: 6px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button:hover {
+    background: #E0C6BA;
+    cursor: pointer;
+  }
+
+.radioButtons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
+}
 .container2 {
   display: none;
   flex-direction: column;
@@ -74,24 +113,4 @@ nav {
 .slide {
   display: flex;
 
-}
-
-.button {
-  display: inline-block;
-  background-color: #eeeeee;
-  border-radius: 10px;
-  border: 4px double #cccccc;
-  text-align: center;
-  font-size: 16px;
-  padding: 6px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-.button:hover {
-  background: #E0C6BA;
-  cursor: pointer;
 }

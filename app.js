@@ -76,6 +76,16 @@ $(()=>{
         );
     })
    
+    $(".previous").on("click", () => {
+      console.log("previous was clicked");
+      $('#results').children().eq(currentImgIndex).css("display", "none");
+      if (currentImgIndex > highestIndex) {
+        highestIndex++;
+      } else {
+        currentImgIndex = 0;
+      }
+      $("#results").children().eq(currentImgIndex).css("display", "flex");
+    })
         $(".next").on("click", () => {
   // stuff will go here
     console.log("Next was clicked");
@@ -88,4 +98,6 @@ $(()=>{
   }
   $("#results").children().eq(currentImgIndex).css("display", "flex");
 });
+
+    
 })
