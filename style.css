@@ -26,15 +26,18 @@ nav {
 
 /* ======= CAROUSEL SECTION ======== */
 .carousel-container {
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
+  
 }
 .carousel-images {
   padding: 10px;
   border-radius: 10px;
+  width: 80%;
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  
 
 }
 
@@ -59,15 +62,18 @@ nav {
  
   padding: 2rem;
   flex: 1;
+  
 }
 
 .bookInfo {
  
   padding: 2rem;
-  flex: 2;
+  flex: 3;
+
 }
 .slide {
   display: flex;
+
 }
 
 .button {

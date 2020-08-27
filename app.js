@@ -8,6 +8,7 @@ $(()=>{
     $('#searchButton').on('click', (event)=>{
         console.log("clicked")
         
+        
 
         const searchTerm = $('input[type="text"]').val();
         
