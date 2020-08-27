@@ -8,13 +8,21 @@ $(()=>{
     $('#searchButton').on('click', (event)=>{
         console.log("clicked")
         
-        
-
+        $('.container2').css("display", "flex");
+        $('#results').empty();
+        currentImgIndex = 0;
         const searchTerm = $('input[type="text"]').val();
         
+        /////checkboxes
+        let searchUrl = `https://www.googleapis.com/books/v1/volumes?q=subject:${searchTerm}&printType=books&maxResults=40&&orderBy=newest&key=AIzaSyApx2mrOvapaQUu15bI9SnyJyUlalMPJIs`
+        
+        let filter = $('input[name=filter]:checked').val();
+        if (filter !== undefined){
+            searchUrl+=`&filter=${filter}`
+        }
 
         $.ajax({
-            url:`https://www.googleapis.com/books/v1/volumes?q=subject:${searchTerm}&printType=books&maxResults=40&&orderBy=newest&key=AIzaSyApx2mrOvapaQUu15bI9SnyJyUlalMPJIs`
+            url: searchUrl
         }).then(
             (data)=>{
                 console.log(data)
@@ -42,7 +50,7 @@ $(()=>{
                     const $title =$('<p/>');
                     $bookInfo.append($title);
                     const bookTitle = item.volumeInfo.title;
-                    $title.text(bookTitle);
+                    $title.html(`<b>Title</b>: ${bookTitle}`);
 
                     if(item.volumeInfo.authors !== undefined){
 
@@ -53,12 +61,12 @@ $(()=>{
                         for (const element of item.volumeInfo.authors){
                             authors += element + ","
                         }
-                        $authors.text(authors.replace(/,+$/,""));
+                        $authors.html(`<b>Author(s)</b>: ${authors.replace(/,+$/,"")}`);
                     }
                     const $summary = $('<p/>');
                     $bookInfo.append($summary);
                     let summary = item.volumeInfo.description;
-                    $summary.text(summary);
+                    $summary.html(`<b>Summary</b>: ${summary}`);
                     highestIndex = i;
                 }
             },
