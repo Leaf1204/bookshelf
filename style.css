@@ -1,13 +1,14 @@
 body {
     background: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    font-family: 'Libre Baskerville', serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
 nav {
   background-color: #A9B8C9;
+  font-family: 'Libre Baskerville', serif;
   padding: 15px;
   font-size: xx-large;
   text-align: center;
@@ -54,7 +55,11 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  
+   
+}
+
+label {
+  margin-right: 10px;
 }
 .container2 {
   display: none;

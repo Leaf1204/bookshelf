@@ -66,7 +66,11 @@ $(()=>{
                     const $summary = $('<p/>');
                     $bookInfo.append($summary);
                     let summary = item.volumeInfo.description;
-                    $summary.html(`<b>Summary</b>: ${summary}`);
+                    if(summary.length>300) {
+                        $summary.html(`<b>Summary</b>: ${summary.substring(0,300)}...`);
+                    }else {
+                        $summary.html(`<b>Summary</b>: ${summary}`);
+                    }
                     highestIndex = i;
                 }
             },
@@ -79,8 +83,8 @@ $(()=>{
     $(".previous").on("click", () => {
       console.log("previous was clicked");
       $('#results').children().eq(currentImgIndex).css("display", "none");
-      if (currentImgIndex > highestIndex) {
-        highestIndex++;
+      if (currentImgIndex > 0) {
+        currentImgIndex--;
       } else {
         currentImgIndex = 0;
       }
