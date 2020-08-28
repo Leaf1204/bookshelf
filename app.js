@@ -38,9 +38,10 @@ $(()=>{
                     $bookCover.addClass('bookcover');
                     const $bookImage = $(`<img/>`);
                     $bookCover.append($bookImage);
-                    const imgUrl = item.volumeInfo.imageLinks.smallThumbnail;
-                    $bookImage.attr('src',imgUrl )
-
+                    if (item.volumeInfo.imageLinks !== undefined){
+                        const imgUrl = item.volumeInfo.imageLinks.smallThumbnail;
+                        $bookImage.attr('src',imgUrl )
+                    }
                     $slide.append($bookCover);
                     
                     const $bookInfo=$(`<div/>`);
@@ -65,11 +66,13 @@ $(()=>{
                     }
                     const $summary = $('<p/>');
                     $bookInfo.append($summary);
-                    let summary = item.volumeInfo.description;
-                    if(summary.length>300) {
-                        $summary.html(`<b>Summary</b>: ${summary.substring(0,300)}...`);
-                    }else {
-                        $summary.html(`<b>Summary</b>: ${summary}`);
+                    if(item.volumeInfo.description !== undefined){
+                        let summary = item.volumeInfo.description;
+                        if(summary.length>300) {
+                            $summary.html(`<b>Summary</b>: ${summary.substring(0,300)}...`);
+                        }else {
+                            $summary.html(`<b>Summary</b>: ${summary}`);
+                        }
                     }
                     highestIndex = i;
                 }

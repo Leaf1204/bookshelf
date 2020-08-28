@@ -47,7 +47,7 @@ nav {
   }
   
   .button:hover {
-    background: #E0C6BA;
+    background: #A9B8C9;
     cursor: pointer;
   }
 
@@ -97,7 +97,7 @@ label {
 
 .carousel-button:hover {
   cursor: pointer;
-  background: #E0C6BA;
+  background: #A9B8C9;
   box-shadow: 1px 1px #d7d7ce;
   color: white;
 }
