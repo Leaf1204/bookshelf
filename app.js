@@ -88,7 +88,7 @@ $(()=>{
 
                     
                         const $dateBook = $(`<button id="dateBook${i}"   class="button">what to "date" this book?</button>`);
-                        $summary.append($dateBook);
+                        $bookInfo.append($dateBook);
                         $(`#dateBook${i}`).on("click", () => {
                           console.log("date button was clicked");
                           const dateBook = item.volumeInfo.canonicalVolumeLink;
